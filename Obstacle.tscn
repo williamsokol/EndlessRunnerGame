@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="PhysicsMaterial" id=13]
+bounce = 0.83
+
+[sub_resource type="BoxShape" id=12]
+
+[sub_resource type="CubeMesh" id=10]
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.298039, 0.298039, 0.298039, 1 )
+
+[node name="Obstacle" type="RigidBody" groups=["Obstacle"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000407815, 2.46586, -34.5559 )
+mass = 2.0
+physics_material_override = SubResource( 13 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 12 )
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape"]
+mesh = SubResource( 10 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 11 )
