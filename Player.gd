@@ -28,8 +28,9 @@ func _process(delta):
 	pass
 func onBodyEntered(body):
 	if(body.is_in_group("Obstacle")):
-		gravity_scale = 20
-		linear_velocity.z = linear_velocity.z/2
+		#mode = MODE_RIGID
+		#gravity_scale = 10
+		#linear_velocity.z = -linear_velocity.z/8
+		#angular_velocity.y = 100
 		forwardF=0
-		mode = MODE_RIGID
 		print(body.name)
